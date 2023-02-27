@@ -1,0 +1,11 @@
+.name-wrapper {
+    width: 80%;
+    padding: 20px;
+    margin: auto;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    margin-top: 100px;
+    font-size: 30px;
+    background-color: "#2a2f4c";
+    border:"1px solid white"
+}

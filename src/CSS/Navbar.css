@@ -1,2 +1,23 @@
 
+.navbar {
+    padding: 5px 90px 10px 120px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    align-items: center;
+    font-size: 20px;
+    top: 0;
+    
+}
 
+.space {
+    margin: 0px 50px;
+}
+
+.margin-class {
+    margin: 5px;
+}
+
+.online {
+    text-decoration: underline;
+}

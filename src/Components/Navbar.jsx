@@ -1,126 +1,81 @@
-import React from "react";
-import { Flex,Text,Button, Heading, Spacer } from "@chakra-ui/react";
-import { Link } from "react-scroll";
+import { Button, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerOverlay, HStack, SimpleGrid, useDisclosure } from "@chakra-ui/react"
 import { DownloadIcon, HamburgerIcon } from "@chakra-ui/icons";
-import Gourav_Bundiwal_Resume from "../PDF/Gourav_Bundiwal_Resume.pdf";
-const Navbar = () => {
-   const handleClick = () => {
-   window.open(Gourav_Bundiwal_Resume, "_blank", "noreferrer");
-  
- };
-  return (
-    <Flex
-      backgroundColor="#2a2f4c"
-      p={3}
-      w={"100%"}
-      color="white"
-      justifyContent='space-between'
-    >
-      <Flex  alignItems={"center"} cursor={"pointer"}>
-        <Heading  ml="8" size="md" fontWeight='semibold' >Gourav</Heading>
-      </Flex>
-      
-      
-    <Flex  gap={5} fontWeight='semibold'alignItems={"center"} cursor={"pointer"} mr={8}>
-        <Text>Home</Text>
-        <Text>About Me</Text>
-        <Text>Skills</Text>
-        <Text>Project</Text>
-        <Text>Contact</Text>
-        <Button bg={"#f6324b"}><DownloadIcon />Resume</Button>
-      </Flex>
-    </Flex>
-  );
-};
+import { useEffect, useRef, useState } from "react";
+import { NavHashLink } from 'react-router-hash-link';
+import Resume from '../PDF/Gourav_Bundiwal_Resume.pdf'
+import '../CSS/Navbar.css'
 
-export default Navbar;
+function NavBar() {
+    const [width, setWidth] = useState(window.innerWidth);
+    const { isOpen, onOpen, onClose } = useDisclosure();
+    const btnRef = useRef();
 
+    const DetectWindowSize = () => {
+        setWidth(window.innerWidth)
+    }
 
-//   return (
-//     <Box
-//       bg={"#2a2f4c"}
-//       position="sticky"
-//       top="0"
-//       zIndex="100"
-//       boxShadow="rgba(61, 61, 148, 0.25) 0px 6px 12px -2px, rgba(34, 30, 30, 0.3) 0px 3px 7px -3px"
-//     >
-//       <Flex alignItems="center" justifyContent={"space-between"}>
-//         <Link to="Home" spy={true} smooth={true} offset={-40} duration={500}>
-//           Gourav
-//         </Link>{" "}
-//         <HStack pr={10} spacing={[6, 8, 10, 12]} fontSize="20px">
-//           <Box cursor={"pointer"}>
-//             <Link
-//               to="Home"
-//               spy={true}
-//               smooth={true}
-//               offset={-40}
-//               duration={500}
-//               textDecoration="none"
-//             >
-//               Home
-//             </Link>
-//           </Box>{" "}
-//           <Box cursor={"pointer"}>
-//             <Link
-//               to="About"
-//               spy={true}
-//               smooth={true}
-//               offset={-40}
-//               duration={500}
-//               textDecoration="none"
-//             >
-//               About
-//             </Link>
-//           </Box>
-//           <Box cursor={"pointer"}>
-//             <Link
-//               to="Skills"
-//               spy={true}
-//               smooth={true}
-//               offset={-40}
-//               duration={500}
-//               textDecoration="none"
-//             >
-//               Skills
-//             </Link>
-//           </Box>
-//           <Box cursor={"pointer"}>
-//             <Link
-//               to="Projects"
-//               spy={true}
-//               smooth={true}
-//               offset={-40}
-//               duration={500}
-//               textDecoration="none"
-//               cu
-//             >
-//               Project
-//             </Link>
-//           </Box>
-//           <Box cursor={"pointer"}>
-//             <Link
-//               to="Contact"
-//               spy={true}
-//               smooth={true}
-//               offset={-40}
-//               duration={500}
-//               textDecoration="none"
-//             >
-//               Contact
-//             </Link>
-//           </Box>
-//           <Box cursor={"pointer"}>
-//             <a href={Gourav_Bundiwal_Resume} download>
-//               <Button onClick={handleClick} bg={"#f6324b"}>
-//                 Resume
-//               </Button>
-//             </a>
-//           </Box>
-//         </HStack>
-//       </Flex>
-//     </Box>
-//   );
-// };
+    useEffect(() => {
+        window.addEventListener("resize", DetectWindowSize)
 
-// export default Navbar;
+        return () => {
+            window.removeEventListener("resize", DetectWindowSize)
+        }
+    }, [width])
+    return (
+        <div id='nav-menu' className="navbar" style={{ position: "fixed",backgroundColor:"#2a2f4c", color:"white", width: '100%',margin:"auto" }}>
+            <div className="name-logo" style={{ fontSize: '30px' }}> Gourav</div>
+            <div className="space"></div>
+            <HStack spacing={50}>
+                {
+                    width < 920 ?
+                        <>
+                            <Button ref={btnRef} colorScheme='white' color='black' fontSize={25} onClick={onOpen}>
+                                <HamburgerIcon color='white'  />
+                            </Button>
+                            <Drawer
+                                isOpen={isOpen}
+                                placement='top'
+                                onClose={onClose}
+                                finalFocusRef={btnRef}
+                            >
+                                <DrawerOverlay />
+                                <DrawerContent>
+                                    <DrawerCloseButton />
+                                    <DrawerBody>
+                                        <SimpleGrid columns={[1, 3, 6]} p='10px' textAlign='center'>
+                                            <a className="nav-link home" href='#home' smooth>Home</a>
+                                            <a className="nav-link about" href='#about' smooth>About Me</a>
+                                            <a className="nav-link skills" href='#skills' smooth>Skills</a>
+                                            <a className="nav-link projects" href='#projects' smooth>Project</a>
+                                            <a className="nav-link contact" href='#contact' smooth>Contact</a>
+                                            <a className="nav-link resume" id="resume-button-1" href={Resume} onClick={() => window.open("https://drive.google.com/file/d/1SwaqlQIIfabg-mgmSySgWnfEmDxgkRz5/view?usp=sharing")} download="Gourav_Bundiwal_Resume">
+                                                <Button className="margin-class" bg={"#f6324b"}>
+                                                    <DownloadIcon /> Resume
+                                                </Button>
+                                            </a>
+                                        </SimpleGrid>
+                                    </DrawerBody>
+                                </DrawerContent>
+                            </Drawer>
+                        </>
+                        :
+                        <>
+                            <NavHashLink className='"nav-link home"' to='#home' smooth>Home</NavHashLink>
+                            <NavHashLink className="nav-link about" to='#about' smooth>About Me</NavHashLink>
+                            <NavHashLink className="nav-link skills" to='#skills' smooth>Skills</NavHashLink>
+                            <NavHashLink className="nav-link projects" to='#projects' smooth>Project</NavHashLink>
+                            <NavHashLink className="nav-link contact" to='#contact' smooth>Contact</NavHashLink>s
+                            <a className="nav-link resume" href={Resume} id="resume-button-1" onClick={() => window.open("https://drive.google.com/file/d/1SwaqlQIIfabg-mgmSySgWnfEmDxgkRz5/view?usp=sharing")} download="Gourav_Bundiwal_Resume">
+                                <Button className="margin-class" bg={"#f6324b"}>
+                                    <DownloadIcon /> Resume
+                                </Button>
+                            </a>
+                        </>
+                }
+            </HStack>
+            <hr />
+        </div >
+    )
+}
+
+export default NavBar;
