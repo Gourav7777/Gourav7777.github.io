@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.964fdded.css",
-    "main.js": "/static/js/main.fd6e16dc.js",
+    "main.css": "/static/css/main.2e11f4c6.css",
+    "main.js": "/static/js/main.c391441d.js",
     "static/js/787.128fc6e9.chunk.js": "/static/js/787.128fc6e9.chunk.js",
+    "static/media/mypicture.png": "/static/media/mypicture.74da1a08f3d3869bc6bd.png",
     "static/media/Gourav_Bundiwal_Resume.pdf": "/static/media/Gourav_Bundiwal_Resume.b6eca4ec39f43831d9f7.pdf",
     "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/index.html",
-    "main.964fdded.css.map": "/static/css/main.964fdded.css.map",
-    "main.fd6e16dc.js.map": "/static/js/main.fd6e16dc.js.map",
+    "main.2e11f4c6.css.map": "/static/css/main.2e11f4c6.css.map",
+    "main.c391441d.js.map": "/static/js/main.c391441d.js.map",
     "787.128fc6e9.chunk.js.map": "/static/js/787.128fc6e9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.964fdded.css",
-    "static/js/main.fd6e16dc.js"
+    "static/css/main.2e11f4c6.css",
+    "static/js/main.c391441d.js"
   ]
 }
