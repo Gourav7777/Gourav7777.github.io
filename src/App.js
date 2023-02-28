@@ -9,6 +9,10 @@ import Projects from './Components/Projects';
 import Aboutxtra from './Components/Aboutxtra';
 import Contact from './Components/Contact';
 import Home from './Components/Home';
+import Skillsxtra from './Components/Skillsxtra';
+import Github from './Components/Github';
+import Githubxtra from './Components/Githubxtra';
+import Contactxtra from './Components/Contactxtra';
 function App() {
   return (
     <div className="App">
@@ -19,12 +23,16 @@ function App() {
       {/* <br/> */}
       <Aboutxtra></Aboutxtra>
       <AboutMe></AboutMe>
-      {
-      /*
+      <Skillsxtra></Skillsxtra>
+      <Skills></Skills>
       
-     <Skills></Skills>
+      
+      
+      <Githubxtra></Githubxtra>
+      <Github></Github>
       <Projects></Projects>
-      <Contact></Contact> */}
+      <Contactxtra></Contactxtra>
+      <Contact></Contact> 
     </div>
   );
 }
