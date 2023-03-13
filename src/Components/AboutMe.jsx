@@ -1,7 +1,10 @@
 import React from "react";
-import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image, Text ,Button} from "@chakra-ui/react";
+
 import "../CSS/About.css";
 import { useEffect,useState } from 'react';
+import { DownloadIcon } from '@chakra-ui/icons'
+import Resume from '../PDF/Gourav_Bundiwal_Resume.pdf'
 const AboutMe = () => {
 
   const [width, setWidth] = useState(window.innerWidth);
@@ -32,7 +35,7 @@ useEffect(() => {
       direction="column"
       justifyContent="space-between"
       alignItems="center"
-      id={"about"}
+      id="about"
       className="about section"
        gap={5}
     >
@@ -73,10 +76,19 @@ useEffect(() => {
       // direction="column"
       justifyContent="space-between"
       alignItems="center"
-      id={"about"}
+      id="about"
       className="about section"
        gap={5}
     >
+
+
+
+
+
+
+
+
+
       <Image
         sizes={"60%"}
         alt={"Login Image"}

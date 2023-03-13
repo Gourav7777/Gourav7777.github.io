@@ -1,0 +1,34 @@
+#projects {
+    background-color: '#2a2f4c';
+      color: "white";
+    padding: 20px;
+    text-align: center;
+    width: 90%;
+    margin: auto;
+    /* margin-top: 40px; */
+}
+
+.live {
+    cursor: pointer;
+}
+
+.live:hover {
+    text-decoration: underline;
+}
+
+.project-image {
+    margin: 30px;
+}
+
+
+#extra{
+    width: 80%;
+    padding: 20px;
+    text-align: left;
+    width: 80%;
+    margin: auto;
+   
+    
+    
+
+}
