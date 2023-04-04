@@ -1,20 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.11991434.css",
-    "main.js": "/static/js/main.f354bbeb.js",
+    "main.css": "/static/css/main.388417a7.css",
+    "main.js": "/static/js/main.5a2fe3d1.js",
     "static/js/787.128fc6e9.chunk.js": "/static/js/787.128fc6e9.chunk.js",
+    "static/media/Amazon.png": "/static/media/Amazon.86e0992371b7f405a85f.png",
     "static/media/Diesel.png": "/static/media/Diesel.e68c11feec5fbe74587c.png",
     "static/media/Snapdeal.png": "/static/media/Snapdeal.fd0a8be50c9852f51639.png",
     "static/media/mypicture.png": "/static/media/mypicture.74da1a08f3d3869bc6bd.png",
-    "static/media/Gourav_Bundiwal_Resume.pdf": "/static/media/Gourav_Bundiwal_Resume.b6eca4ec39f43831d9f7.pdf",
+    "static/media/Gourav_Bundiwal_Resume.pdf": "/static/media/Gourav_Bundiwal_Resume.6e441451b40e5757c229.pdf",
     "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/index.html",
-    "main.11991434.css.map": "/static/css/main.11991434.css.map",
-    "main.f354bbeb.js.map": "/static/js/main.f354bbeb.js.map",
+    "main.388417a7.css.map": "/static/css/main.388417a7.css.map",
+    "main.5a2fe3d1.js.map": "/static/js/main.5a2fe3d1.js.map",
     "787.128fc6e9.chunk.js.map": "/static/js/787.128fc6e9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.11991434.css",
-    "static/js/main.f354bbeb.js"
+    "static/css/main.388417a7.css",
+    "static/js/main.5a2fe3d1.js"
   ]
 }
